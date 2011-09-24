@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	.ns files
-" Maintainer:	Josep M. Bach <josep.m.bachNOSPAN@gmail.com>
-" Last Change:	2011 Sep 21
+" Maintainer:	Josep M. Bach <josep.m.bachNOSPAM@gmail.com>
+" Last Change:	2011 Sep 24
 
 if exists("b:current_syntax")
   finish
@@ -9,6 +9,9 @@ endif
 
 syn keyword xOperator == != >= <= > < =
 syn keyword xBoolean true false nil
+
+syn match   xComment	"#.*$" display contains=xTodo
+syn keyword xTodo	TODO FIXME XXX contained
 
 syn match xString /'[^']*'/ contains=xLInt,xRInt,xSpecial
 syn match xLInt '#{' contained
@@ -30,6 +33,7 @@ syn match xDigit "\d"
 hi link xDigit Constant
 hi link xBoolean Type
 
+hi link xComment Comment
 hi link xString Constant
 hi link xQuote Special
 hi link xLInt Special
